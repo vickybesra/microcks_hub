@@ -1,0 +1,24 @@
+/* tilegrid.css */
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .tile {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .tile:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tile h2 {
+    margin-top: 0;
+  }
+  

@@ -1,0 +1,15 @@
+<!-- src/routes/mocks/[id]/+page.svelte -->
+<script>
+  export let data;
+</script>
+
+<svelte:head>
+  <title>{data.mock.name} - Microcks Hub</title>
+</svelte:head>
+
+<main>
+  <h1>{data.mock.name}</h1>
+  <p>{data.mock.description}</p>
+  <pre>{JSON.stringify(data.mock, null, 2)}</pre>
+  <a href="/">Back to mocks list</a>
+</main>
