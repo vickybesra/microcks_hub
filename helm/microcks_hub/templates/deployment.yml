@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "microcks-hub.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "microcks-hub.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "microcks-hub.name" . }}
+    spec:
+      containers:
+      - name: {{ include "microcks-hub.name" . }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        env:
+        - name: NODE_ENV
+          value: "production"

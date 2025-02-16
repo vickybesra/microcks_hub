@@ -1,0 +1,5 @@
+apiVersion: v2
+name: microcks-hub
+description: A Helm chart to deploy the SvelteKit-based Microcks Hub
+version: 0.1.0
+appVersion: "1.0"

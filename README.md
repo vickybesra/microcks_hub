@@ -1,38 +1,56 @@
-# sv
+# Microcks Hub Demo (SvelteKit)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Creating a project
+## Getting Started
 
-If you're seeing this, you've probably already done this step. Congrats!
+### Prerequisites
 
-```bash
-# create a new project in the current directory
-npx sv create
+- Node.js v18+
+- Docker 20.10+ & Docker Compose 2.4+
+- Helm 3.8+ (for Kubernetes deployment)
+- Kubernetes cluster (minikube, kind, or cloud provider)
 
-# create a new project in my-app
-npx sv create my-app
+## Development
+
+### Local Setup
+
+Clone repository:
+   ```
+   git clone https://github.com/vickybesra/microcks_hub.git
+   cd microcks_hub
+   ```
+Install dependencies:
 ```
+npm install
+```
+Start development server:
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+```
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Access at: http://localhost:5173
 
-To create a production version of your app:
-
-```bash
-npm run build
+## Deployment
+Docker Deployment
+Build image:
 ```
+docker build -t microcks-ui .
+```
+Run container:
+```
+docker-compose up -d --build
+```
+Kubernetes/Helm Deployment:
 
-You can preview the production build with `npm run preview`.
+Deploy to cluster:
+```
+helm upgrade --install microcks_hub ./helm/microcks_hub \
+  --namespace microcks \
+  --create-namespace
+  ```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Verify deployment:
+```
+kubectl get deployments,svc,pods -n microcks
+```

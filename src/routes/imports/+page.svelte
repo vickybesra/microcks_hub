@@ -1,6 +1,6 @@
 <script>
   import FileUploader from '$lib/components/FileUploader.svelte';
-  import '$lib/styles/Imports.css';
+  import '$lib/styles/imports.css';
 </script>
 
 <div class="imports-page">
