@@ -3,7 +3,7 @@ FROM node:19 as build
 ENV NODE_ENV=production
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --production=false
 COPY . ./
 RUN npm run build
 

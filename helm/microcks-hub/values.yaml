@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-dockerhub-username/microcks-hub
+  repository: vickybesra2000/microcks-hub
   tag: latest
   pullPolicy: IfNotPresent
 
