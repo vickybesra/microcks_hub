@@ -35,7 +35,7 @@ Access at: http://localhost:5173
 Docker Deployment
 Build image:
 ```
-docker build -t microcks-ui .
+docker build -t vickybesra2000/microcks-hub .
 ```
 Run container:
 ```
@@ -45,7 +45,7 @@ Kubernetes/Helm Deployment:
 
 Deploy to cluster:
 ```
-helm upgrade --install microcks_hub ./helm/microcks_hub \
+helm upgrade --install microcks-hub ./helm/microcks_hub \
   --namespace microcks \
   --create-namespace
   ```
