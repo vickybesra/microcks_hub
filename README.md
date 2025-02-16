@@ -54,3 +54,11 @@ Verify deployment:
 ```
 kubectl get deployments,svc,pods -n microcks
 ```
+
+Here is the demo video of the app
+
+
+https://github.com/user-attachments/assets/72fae924-da52-42fc-b10b-9fdb252b40bd
+
+
+
